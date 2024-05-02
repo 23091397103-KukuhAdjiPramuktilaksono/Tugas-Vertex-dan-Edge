@@ -26,3 +26,31 @@ class Peta:
     
     def tambahkanJalan(self, kota1, kota2):
         if kota1 in self.cityList and kota2 in self.cityList:
+            # Masukkan kota1 di list kota2
+            self.cityList[kota2].append(kota1)
+            # Masukkan kota2 di list kota1
+            self.cityList[kota1].append(kota2)
+            return True
+        return False
+    
+    def hapusJalan(self, kota1, kota2):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            # Hapus kota1 di list kota2
+            self.cityList[kota2].remove(kota1)
+            # Hapus kota2 di list kota1
+            self.cityList[kota1].remove(kota2)
+            return True
+        return False
+
+petaIndonesia = Peta()
+petaIndonesia.tambahkanKota("Bangkalan")
+petaIndonesia.tambahkanKota("Lamongan")
+petaIndonesia.tambahkanKota("Bojonegoro")
+petaIndonesia.tambahkanKota("Gresik")
+petaIndonesia.tambahkanKota("Surabaya")
+petaIndonesia.tambahkanKota("Sidoarjo")
+petaIndonesia.tambahkanKota("Mojokerto")
+petaIndonesia.tambahkanKota("Nganjuk")
+petaIndonesia.tambahkanKota("Pasuruan")
+petaIndonesia.tambahkanKota("Malang")
+petaIndonesia.tambahkanKota("Probolinggo")
